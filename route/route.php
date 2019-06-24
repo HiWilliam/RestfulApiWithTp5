@@ -16,6 +16,7 @@ Route::get('think', function () {
 Route::get('hello/:name', 'index/hello');
 Route::rule("api/:version/index","api/:version.Token/index");
 Route::rule("api/:version/admin","api/:version.Token/getAdminById");
+Route::rule("api/:version/actions","api/:version.Token/getAction");
 return [
 
 ];

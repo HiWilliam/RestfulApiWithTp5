@@ -16,5 +16,13 @@ class Token extends Api{
     public function index(){
         $this->sendMsg("返回成功",$this->request->param('route'));
     }
+    /**
+     * @获取请求方法
+     * @return: 
+     */
+    public function getAction()
+    {
+        dump($this->request->controller());
+    }
 
 }
