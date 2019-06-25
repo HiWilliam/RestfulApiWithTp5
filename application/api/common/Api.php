@@ -54,4 +54,9 @@ class Api{
     public function _empty(){
         $this->sendMsg("不存在".strtolower($this->request->action()));
     }
+
+    public function checkParam($param = [])
+    {
+        $param = $param ? $param : $this->request->param();
+    }
 }
