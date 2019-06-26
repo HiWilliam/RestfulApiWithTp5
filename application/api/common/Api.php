@@ -4,6 +4,7 @@ namespace app\api\common;
 
 use think\Request;
 use app\api\common\Msg;
+use \Redis;
 
 class Api{
     use Msg;
@@ -59,4 +60,5 @@ class Api{
     {
         $param = $param ? $param : $this->request->param();
     }
+
 }
