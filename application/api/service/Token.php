@@ -13,6 +13,7 @@ class Token
         //盐    
         $salt = config("token.token_salt");
 
-        return md5($randChars, $timestamp, $salt);
+        return md5($randChars.$timestamp.$salt);
     }
+
 }

@@ -11,10 +11,10 @@ class User extends Model
      * @param：  openId
      * @return： uid 
      */
-    public static function getIdForToken($id, $openId)
+    public static function getIdForToken($openId)
     {
         $user = self::where("openId", $openId)->find();
-        $res = $user ? $user : self::create();
+        $res = $user ? $user : self::create(['openid'=>$openId]);
         return $res->id;
     }
 }

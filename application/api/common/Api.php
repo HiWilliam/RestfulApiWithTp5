@@ -3,6 +3,7 @@
 namespace app\api\common;
 
 use think\Request;
+use think\Loader;
 use app\api\common\Msg;
 use \Redis;
 
@@ -59,6 +60,16 @@ class Api{
     public function checkParam($param = [])
     {
         $param = $param ? $param : $this->request->param();
+    }
+    /**
+     * @description: 验证方法
+     * @param {type} validate : 验证类名 data:验证数据
+     * @return: bool 
+     */
+    public function validate($validate, $data){
+        $namesapce = "app\lib\\validate\\";
+        $validate = Loader::factory($validate, $namesapce);
+        return $validate->goCheck($data);    
     }
 
 }

@@ -13,11 +13,5 @@ Route::get('think', function () {
     return 'hello,ThinkPHP5!';
 });
 
-Route::get('hello/:name', 'index/hello');
-Route::rule("api/:version/index","api/:version.Token/index");
-Route::rule("api/:version/admin","api/:version.Token/getAdminById");
-Route::rule("api/:version/actions","api/:version.Token/getAction");
-Route::rule("api/:version/header","api/:version.Token/getToken");
-return [
+Route::rule("api/:version/token","api/:version.Token/getToken");
 
-];

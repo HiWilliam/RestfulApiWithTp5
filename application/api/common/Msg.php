@@ -31,4 +31,10 @@ trait Msg{
         throw new HttpResponseException($response);
         // exit(json_encode($res,JSON_UNESCAPED_UNICODE));
     }
+
+    public function success($data = [])
+    {
+
+        $this->sendMsg("获取成功", $data);
+    }
 }
